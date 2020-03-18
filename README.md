@@ -18,9 +18,8 @@ Role Variables
 
 You can override the following default settings as needed:
 ```
-vcftools_version: "1.16"
+vcftools_version: "0.1.16"
 ```
-Per the vcftools documentation, vcftools version numbers don't quite follow standard semantic versioning.  
 
 Dependencies
 ------------
@@ -35,7 +34,7 @@ Example Playbook
 - name: install vcftools
   hosts: localhost
   vars:
-    vcftools_version: "1.6.12"
+    vcftools_version: "0.1.16"
   roles:
     - role: ansible-role-alpha29-vcftools
       become: yes

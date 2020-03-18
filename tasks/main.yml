@@ -33,7 +33,7 @@
 
 - name: unarchive file
   unarchive:
-    src: "https://github.com/vcftools/vcftools/releases/download/v0.{{ vcftools_version }}/vcftools-0.{{ vcftools_version }}.tar.gz"
+    src: "https://github.com/vcftools/vcftools/releases/download/v{{ vcftools_version }}/vcftools-{{ vcftools_version }}.tar.gz"
     dest: /tmp
     remote_src: yes
 
@@ -42,17 +42,17 @@
   # bypass idempotence check
   changed_when: false
   args:
-    chdir: "/tmp/vcftools-0.{{ vcftools_version }}"
+    chdir: "/tmp/vcftools-{{ vcftools_version }}"
 
 - name: run make
   # bypass idempotence check
   changed_when: false
   make:
-    chdir: "/tmp/vcftools-0.{{ vcftools_version }}"
+    chdir: "/tmp/vcftools-{{ vcftools_version }}"
 
 - name: run make install
   # bypass idempotence check
   changed_when: false
   make:
-    chdir: "/tmp/vcftools-0.{{ vcftools_version }}"
+    chdir: "/tmp/vcftools-{{ vcftools_version }}"
     target: install
