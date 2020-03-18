@@ -15,12 +15,6 @@
     name: '*'
     state: latest
 
-#- name: install pkgconfig (yum)
-#  when:
-#    - ansible_os_family == 'RedHat'
-#  yum:
-#    name: pkgconfig
-
 - name: install pkg-config (apt)
   when:
     - ansible_os_family == 'Debian'
