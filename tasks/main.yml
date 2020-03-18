@@ -39,14 +39,20 @@
 
 - name: configure
   command: "./configure"
+  # bypass idempotence check
+  changed_when: false
   args:
     chdir: "/tmp/vcftools-0.{{ vcftools_version }}"
 
 - name: run make
+  # bypass idempotence check
+  changed_when: false
   make:
     chdir: "/tmp/vcftools-0.{{ vcftools_version }}"
 
 - name: run make install
+  # bypass idempotence check
+  changed_when: false
   make:
     chdir: "/tmp/vcftools-0.{{ vcftools_version }}"
     target: install
