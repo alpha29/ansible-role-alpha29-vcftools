@@ -15,11 +15,11 @@
     name: '*'
     state: latest
 
-- name: install pkgconfig (yum)
-  when:
-    - ansible_os_family == 'RedHat'
-  yum:
-    name: pkgconfig
+#- name: install pkgconfig (yum)
+#  when:
+#    - ansible_os_family == 'RedHat'
+#  yum:
+#    name: pkgconfig
 
 - name: install pkg-config (apt)
   when:
@@ -41,3 +41,12 @@
   command: "./configure"
   args:
     chdir: "/tmp/vcftools-0.{{ vcftools_version }}"
+
+- name: run make
+  make:
+    chdir: "/tmp/vcftools-0.{{ vcftools_version }}"
+
+- name: run make install
+  make:
+    chdir: "/tmp/vcftools-0.{{ vcftools_version }}"
+    target: install
