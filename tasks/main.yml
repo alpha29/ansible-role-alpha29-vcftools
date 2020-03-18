@@ -1,2 +1,10 @@
 ---
-# tasks file for ansible-role-alpha29-vcftools
+- name: install build tools
+  include_role:
+    name: robertdebock.buildtools
+
+- name: unarchive file
+  unarchive:
+    src: "https://github.com/vcftools/vcftools/releases/download/v0.{{ vcftools_version }}/vcftools-0.{{ vcftools_version }}.tar.gz"
+    dest: /tmp
+    remote_src: yes
