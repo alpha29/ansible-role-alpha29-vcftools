@@ -1,2 +1,2 @@
 ---
-# vars file for ansible-role-alpha29-vcftools
+vcftools_version: "69.69.69"
