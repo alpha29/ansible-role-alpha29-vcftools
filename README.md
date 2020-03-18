@@ -18,8 +18,9 @@ Role Variables
 
 You can override the following default settings as needed:
 ```
-vcftools_version: "1.6.12"
+vcftools_version: "1.16"
 ```
+Per the vcftools documentation, vcftools version numbers don't quite follow standard semantic versioning.  
 
 Dependencies
 ------------
